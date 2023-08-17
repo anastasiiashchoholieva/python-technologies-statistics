@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+from app.parse import main as parsing_main
 
 
 def read_results_csv(csv_path):
@@ -36,6 +37,7 @@ def create_bar_chart(result_dict, output_image_path):
 
 
 def main():
+    parsing_main("result.csv")
     output_image_path = "../chart/technologies_chart.png"
     result_dict = read_results_csv("result.csv")
     create_bar_chart(result_dict, output_image_path)
