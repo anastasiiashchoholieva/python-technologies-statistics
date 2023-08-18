@@ -9,9 +9,8 @@ def read_results_csv(csv_path):
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            technology = row[0]
-            frequency = int(row[1])
-            result_dict[technology] = frequency
+            technology, frequency = row
+            result_dict[technology] = int(frequency)
     return result_dict
 
 
